@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!-- <script type="text/javascript" src="js/ajaxp.js"></script> -->
+<!-- 
+<script type="text/javascript" src="js/ajaxp.js"></script>
+-->
+<script type="text/javascript">
+
+ 
+var getJSONP = function(url,dataObj,sucessFun,errorFun){
+	$.ajax({
+		async : false,
+		url : url+'&callback=?',
+		type : 'GET',
+		dataType : 'jsonp',//data : {username : $("#username").val(),password : $.md5 ($("#password").val() )}, 
+		jsonp : 'jsoncallback',
+		data : dataObj, 
+		timeout : 5000,
+		success : sucessFun,
+		error:errorFun
+	});
+};
+//{"customer_id":"1","title":"fjjfh","place":"dhjj","description":"","start_time":"aN:aN","end_time":"aN:aN","start_date":"NaN-aN-aN","end_date":"NaN-aN-aN","start":"1418206852","end":"1418206852","create_time":1418206861,"update_time":1418206861,"is_deleted":0,"status":0,"fa_id":0,"customer":"\u8d22\u5bcc\u6865"}
+var dataObj = {"uid":"1031","tb":"Communication","id":-1,"op":"A","data":{"type":"3","content":"\u8ddb\u811a\u7528\u6237\u5fd9","comm_date":1418140800,"create_time":1418205801,"update_time":1418205801,"is_deleted":0,"delete_time":0,"from_user_id":"1031","from_user_type":1,"to_user_type":2,"to_user_id":"6047"},"fr":"b","to":"c","nv":4528,"pv":"4527","ut":1418205801};
+var obj = {fa_id:'34',data:[dataObj,dataObj]};
+getJSONP('http://bridge.caifuqiao.cn/index.php?m=faDepot&a=uploadCacheDataFromApp',obj,function(data){
+	console.log(data);
+},function(){
+	alert('error');
+});
+</script>
+</head>
+<body>
+<h3>Hello,ajax-</h3>
+
+</body>
+</html>

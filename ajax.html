@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<!-- 
+<script type="text/javascript" src="js/ajaxp.js"></script>
+-->
+<script type="text/javascript">
+var getJSONP = function(url,dataObj,sucessFun,errorFun){
+	$.ajax({
+		async : false,
+		url : url+'&callback=?',
+		type : 'GET',
+		dataType : 'jsonp',//data : {username : $("#username").val(),password : $.md5 ($("#password").val() )}, 
+		jsonp : 'jsoncallback',
+		data : dataObj, 
+		timeout : 5000,
+		success : sucessFun,
+		error:errorFun
+	});
+};
+getJSONP('ajaxpServer.php',{a:'a'},function(data){
+	console.log(data);
+},function(){
+	alert('error');
+});
+</script>
+</head>
+<body>
+<h3>Hello,ajax-</h3>
+
+</body>
+</html>

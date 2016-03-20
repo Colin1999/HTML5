@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+<h3>Hello,websocket chat room-</h3>
+<input onkeydown="if(event.keyCode===13) submit(this);"/>
+<script type="text/javascript">
+    //建立websocket
+    var ws = new WebSocket('ws://localhost:8888/');
+    //将接收到的消息插入到body内
+    ws.onmessage = function(event){
+        var comment = document.createElement('li');
+        comment.textContent =  event.data;
+        document.body.appendChild(comment);
+    }
+    //将文本框的值发送给服务器
+    function submit(textbox){
+    	ws.send(textbox.value);
+    	textbox.value = '';
+    }
+</script>
+</body>
+</html>

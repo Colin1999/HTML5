@@ -1,0 +1,16 @@
+Server Started : 2014-11-08 12:17:25
+Listening on   : 127.0.0.1 port 8000
+Server Started : 2014-11-08 12:18:40
+Listening on   : 127.0.0.1 port 8000
+Server Started : 2014-11-08 12:18:53
+Listening on   : 127.0.0.1 port 8000
+Server Started : 2014-11-08 12:19:34
+Listening on   : 192.168.68.1 port 8000
+Server Started : 2014-11-08 12:19:37
+Listening on   : 192.168.68.1 port 8000
+Server Started : 2014-11-08 12:37:08
+Listening on   : 127.0.0.1 port 8000
+Server Started : 2014-11-08 12:40:21
+Listening on   : 127.0.0.1 port 8000
+Server Started : 2014-11-08 12:48:25
+Listening on   : 127.0.0.1 port 8000

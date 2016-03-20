@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!--
+<script type="text/javascript" src="js/comet-longquery.js"></script>
+
+<script type="text/javascript" src="js/comet-stream.js"></script>
+-->
+
+<!-- 
+<script type="text/javascript" src="js/ajaxp.js"></script>
+-->
+
+</head>
+<body>
+<h3>Hello,comet-</h3>
+<a href="http://localhost/html5/comet.html">self</a>
+
+<iframe id="iframe_steaming" style="display: none;"></iframe>
+
+<script type="text/javascript">
+function callback(data){
+	alert(data);
+	//console.log('data'+data);
+}
+
+function connect(){
+	//通过iframe建立连接
+	var iframe = document.getElementById('iframe_steaming');
+	iframe.src = 'comet_streamServer.php';
+	
+}
+connect();
+</script>
+</body>
+</html>
